@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import Papa from 'papaparse';
+import trim from 'lodash/trim';
 
 export default class ApplicationRoute extends Route {
     async model() {
@@ -13,6 +14,7 @@ export default class ApplicationRoute extends Route {
                 error: reject
             });
         });
+        result.data.forEach(e => e['Instagram Handle'] = trim(e['Instagram Handle'], '@'));
         return result.data.filterBy('Approved', 'TRUE');
     }
 }
