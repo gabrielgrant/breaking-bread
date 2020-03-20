@@ -15,8 +15,13 @@ header {
     padding-left: 4vw;
     padding-right: 4vw;
     nav {
+        padding-top: 1.3vw;
+        padding-bottom: 1.3vw;
         a {
-            margin-left: 1.3vw;
+            margin-right: 1.3vw;
+        }
+        a:last-child {
+            margin-right: 0;
         }
     }
 }
