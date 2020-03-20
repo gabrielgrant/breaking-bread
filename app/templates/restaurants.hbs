@@ -1,10 +1,13 @@
-{{#each @model as |r|}}
-    <div>
-        <h4>{{r.[Restaurant Name]}}</h4>
-        <a href="https://www.google.com/maps?q={{r.[Restaurant address]}}">{{r.[Restaurant address]}}</a>
-        <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>
-        <a href="{{r.Website}}">{{r.Website}}</a>
-        <a href="https://instagram.com/{{r.[Instagram Handle]}}">@{{r.[Instagram Handle]}}</a>
-    </div>
-{{/each}}
+{{#each-in @model as |province restaurants|}}
+    <h3>{{province}}</h3>
+    {{#each restaurants as |r|}}
+        <div>
+            <h4>{{r.[Restaurant Name]}}</h4>
+            <a href="https://www.google.com/maps?q={{r.[Restaurant address]}}">{{r.[Restaurant address]}}</a>
+            <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>
+            <a href="{{r.Website}}">{{r.Website}}</a>
+            <a href="https://instagram.com/{{r.[Instagram Handle]}}">@{{r.[Instagram Handle]}}</a>
+        </div>
+    {{/each}}
+{{/each-in}}
 {{outlet}}
