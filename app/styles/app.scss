@@ -1,6 +1,7 @@
 
 // colors:
 $primary-background: #c3efea;
+$link-color: #666;  // was #4ed1be, but that's way too low contrast. #1D7268 works, but is kinda ugly
 
 header {
     display: flex;
@@ -20,12 +21,27 @@ header {
         a {
             margin-right: 1.3vw;
             color: black;
+            &.active {
+                border-bottom: 2px solid black;
+            }
+        }
+        a:hover {
+            color: $link-color;
+            text-decoration: none;
+            &.active {
+                border-bottom: 2px solid $link-color;
+            }
         }
         a:last-child {
             background-color: black;
             color: $primary-background;
             border: 1.3vw solid black;
             margin-right: 0;
+            &:hover {
+                background-color: $link-color;
+                color: $primary-background;
+                border: 1.3vw solid $link-color;
+            }
         }
     }
 }
