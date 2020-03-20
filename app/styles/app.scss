@@ -1,0 +1,27 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    nav {
+        a {
+            margin-left: 1.3vw;
+        }
+    }
+}
+header img {
+    width: auto;
+    max-width: 100%;
+    max-height: 70px;
+}
+
+header, footer {
+    background-color: #c3efea;
+}
