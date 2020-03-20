@@ -57,6 +57,13 @@ header, footer {
     background-color: $primary-background;
 }
 
+main section {
+    padding-top: 5vw;
+    padding-bottom: 3vw;
+    padding-left: $side-padding;
+    padding-right: $side-padding;
+}
+
 .restaurant-cards {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
