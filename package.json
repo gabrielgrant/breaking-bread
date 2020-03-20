@@ -58,5 +58,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "papaparse": "^5.1.1"
   }
 }
