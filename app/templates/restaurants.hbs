@@ -1,19 +1,21 @@
 {{#each-in @model as |province restaurants|}}
     <h3>{{province}}</h3>
-    {{#each restaurants as |r|}}
-        <div class="restaurant-card">
-            <h4>{{r.[Restaurant Name]}}</h4>
-            <a href="https://www.google.com/maps?q={{r.[Restaurant address]}}">{{r.[Restaurant address]}}</a>
-            {{#if r.[Restaurant phone]}}
-                <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>
-            {{/if}}
-            {{#if r.Website}}
-                <a href="{{r.Website}}">{{hostname r.Website}}</a>
-            {{/if}}
-            {{#if r.[Instagram Handle]}}
-                <a href="https://instagram.com/{{r.[Instagram Handle]}}">@{{r.[Instagram Handle]}}</a>
-            {{/if}}
-        </div>
-    {{/each}}
+    <div class='restaurant-cards'>
+        {{#each restaurants as |r|}}
+            <div class="restaurant-card">
+                <h4>{{r.[Restaurant Name]}}</h4>
+                <a href="https://www.google.com/maps?q={{r.[Restaurant address]}}">{{r.[Restaurant address]}}</a>
+                {{#if r.[Restaurant phone]}}
+                    <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>
+                {{/if}}
+                {{#if r.Website}}
+                    <a href="{{r.Website}}">{{hostname r.Website}}</a>
+                {{/if}}
+                {{#if r.[Instagram Handle]}}
+                    <a href="https://instagram.com/{{r.[Instagram Handle]}}">@{{r.[Instagram Handle]}}</a>
+                {{/if}}
+            </div>
+        {{/each}}
+    </div>
 {{/each-in}}
 {{outlet}}
