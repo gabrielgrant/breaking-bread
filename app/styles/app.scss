@@ -1,4 +1,7 @@
 
+// colors:
+$primary-background: #c3efea;
+
 header {
     display: flex;
     justify-content: space-between;
@@ -23,5 +26,5 @@ header img {
 }
 
 header, footer {
-    background-color: #c3efea;
+    background-color: $primary-background;
 }
