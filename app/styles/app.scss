@@ -54,3 +54,13 @@ header img {
 header, footer {
     background-color: $primary-background;
 }
+
+.restaurant-card {
+    h4 {
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+    a {
+        display: block;
+    }
+}
