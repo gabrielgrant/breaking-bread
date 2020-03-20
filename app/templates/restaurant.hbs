@@ -1,1 +1,21 @@
+<h1>{{model.[Restaurant Name]}}</h1>
+<a href="https://www.google.com/maps?q={{model.[Restaurant address]}}">{{model.[Restaurant address]}}</a>
+{{#if model.[Restaurant phone]}}
+    <a href="tel:{{model.[Restaurant phone]}}">{{model.[Restaurant phone]}}</a>
+{{/if}}
+{{#if model.Website}}
+    <a href="{{model.Website}}">{{hostname model.Website}}</a>
+{{/if}}
+{{#if model.[Instagram Handle]}}
+    <a href="https://instagram.com/{{model.[Instagram Handle]}}">@{{model.[Instagram Handle]}}</a>
+{{/if}}
+ <p>
+     {{model.[Services Offered]}}
+ </p>
+<p>
+    {{model.[3rd Party Delivery Services]}}
+</p>
+<p>
+    {{model.[Additional offers or promotions]}}
+</p>
 {{outlet}}
