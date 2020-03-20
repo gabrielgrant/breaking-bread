@@ -10,5 +10,5 @@ Router.map(function() {
   this.route('restaurants');
   this.route('help');
   this.route('signup');
-  this.route('restaurant');
+  this.route('restaurant', {path: 'restaurants/:restaurant_id'});
 });
