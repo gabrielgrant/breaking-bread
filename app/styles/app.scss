@@ -6,6 +6,10 @@ $highlight-color: #4ed1be;
 
 $side-padding: 4vw;
 
+a, a:hover, a:visited, a:active {
+    color: $link-color;
+}
+
 header {
     display: flex;
     justify-content: space-between;
