@@ -6,12 +6,11 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Helper | province-code-to-name', function(hooks) {
   setupRenderingTest(hooks);
 
-  // Replace this with your real tests.
-  test('it renders', async function(assert) {
-    this.set('inputValue', '1234');
+  test('it translates province codes', async function(assert) {
+    this.set('inputValue', 'ON');
 
     await render(hbs`{{province-code-to-name inputValue}}`);
 
-    assert.equal(this.element.textContent.trim(), '1234');
+    assert.equal(this.element.textContent.trim(), 'Ontario');
   });
 });
