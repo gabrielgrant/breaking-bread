@@ -2,6 +2,7 @@
 // colors:
 $primary-background: #c3efea;
 $link-color: #666;  // was #4ed1be, but that's way too low contrast. #1D7268 works, but is kinda ugly
+$highlight-color: #4ed1be;
 
 $side-padding: 4vw;
 
@@ -88,12 +89,31 @@ main section {
 }
 .restaurant-card {
     margin-bottom: 2em;
-    h4 {
+    h4 a{
         font-size: 1.5rem;
         font-weight: normal;
+        color: black;
     }
     a {
         display: block;
+    }
+    .services {
+        color: $highlight-color;
+        text-transform: uppercase;
+    }
+    a.details {
+        border: 2px solid black;
+        display: inline-block;
+        margin-top: 1em;
+        padding: 10px;
+        color: black;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-decoration: none;
+        &:hover {
+            background: black;
+            color: white;
+        }
     }
 }
 
