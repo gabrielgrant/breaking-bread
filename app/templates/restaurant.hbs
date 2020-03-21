@@ -1,6 +1,6 @@
 <section class="restaurant">
     <h1>{{model.[Restaurant Name]}}</h1>
-    <a href="https://www.google.com/maps?q={{model.[Restaurant address]}}">{{model.[Restaurant address]}}</a>
+    <a href="https://www.google.com/maps?q={{model.[Restaurant Address]}}, {{model.City}}, {{model.Province}}, Canada">{{model.[Restaurant Address]}}, {{model.City}}</a>
     {{#if model.[Restaurant phone]}}
         <a href="tel:{{model.[Restaurant phone]}}">{{model.[Restaurant phone]}}</a>
     {{/if}}
