@@ -20,6 +20,13 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'production') {
     ENV.build.environment = 'production';
     // configure other plugins for production deploy target here
+    ENV['scp'] = {
+      nodes: [{
+        username: 'gabeshou',
+        host: 'briel.ca',
+        path: '/home/gabeshou/bb.gabrielgrant.ca/',
+      }],
+    }
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
