@@ -22,6 +22,7 @@
                         <a href="https://instagram.com/{{r.[Instagram Handle]}}">@{{r.[Instagram Handle]}}</a>
                     {{/if}}
                     {{r.[Services Offered]}}
+                    <LinkTo @route="restaurant" @model={{r}} class="details">Details</LinkTo>
                 </div>
             {{/each}}
         </div>
