@@ -13,4 +13,10 @@ module('Integration | Helper | province-code-to-name', function(hooks) {
 
     assert.equal(this.element.textContent.trim(), 'Ontario');
   });
+  test('it works for blank inputs', async function(assert) {
+
+    await render(hbs`{{province-code-to-name inputValue}}`);
+
+    assert.equal(this.element.textContent.trim(), '');
+  });
 });
