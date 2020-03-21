@@ -1,7 +1,8 @@
 import { helper } from '@ember/component/helper';
 
 export default helper(function provinceCodeToName(params/*, hash*/) {
-  return mapping.find(p => p.code === params[0]).name;
+  let prov = mapping.find(p => p.code === params[0])
+  return prov ? prov.name : '';
 });
 
 var mapping = [
