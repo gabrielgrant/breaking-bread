@@ -4,13 +4,13 @@
 <section class="province-links">
     {{#each-in @model as |province restaurants|}}
         <h3>
-            <a href="#{{province}}">{{province}}</a>
+            <a href="#{{province}}">{{province-code-to-name province}}</a>
         </h3>
     {{/each-in}}
 </section>
 <section>
     {{#each-in @model as |province restaurants|}}
-        <h3 id="{{province}}">{{province}}</h3>
+        <h3 id="{{province}}">{{province-code-to-name province}}</h3>
         <div class='restaurant-cards'>
             {{#each restaurants as |r|}}
                 <div class="restaurant-card">
