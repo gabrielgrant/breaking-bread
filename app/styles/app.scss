@@ -123,12 +123,19 @@ main section {
     }
 }
 
-
 .services {
     color: $highlight-color;
     text-transform: uppercase;
+    padding-left: 0;
     li {
         display: inline-block;
+        &::after {
+            content: ' |';
+            color: black;
+        }
+        &:last-of-type::after {
+            content: none;
+        }
     }
 }
 
