@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import Papa from 'papaparse';
 import trim from 'lodash/trim';
+import sortBy from 'lodash/sortBy';
 
 export default class ApplicationRoute extends Route {
     async model() {
@@ -20,6 +21,6 @@ export default class ApplicationRoute extends Route {
             e['Services Offered'] = new Set(e['Services Offered']);  // unique-ify
             e['Services Offered'].delete('Dine-In');
         });
-        return result.data.filterBy('Approved', 'TRUE');
+        return sortBy(result.data.filterBy('Approved', 'TRUE'), r => r['Restaurant Name']);
     }
 }
