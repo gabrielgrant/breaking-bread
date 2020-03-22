@@ -25,7 +25,7 @@ header {
     nav {
         padding-top: 1.5em;
         padding-bottom: 1.5em;
-        a {
+        a, a:hover, a:visited, a:active {
             margin-right: 1.3vw;
             color: black;
             &.active {
