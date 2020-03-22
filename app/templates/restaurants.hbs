@@ -2,14 +2,14 @@
     <h1>Participating Restaurants</h1>
 </section>
 <section class="province-links">
-    {{#each-in @model as |province restaurants|}}
+    {{#each-in this.sortedRestaurants as |province restaurants|}}
         <h2>
             <a href="#{{province}}">{{province-code-to-name province}}</a>
         </h2>
     {{/each-in}}
 </section>
 <section>
-    {{#each-in @model as |province byCities|}}
+    {{#each-in this.sortedRestaurants as |province byCities|}}
         <h2 id="{{province}}">{{province-code-to-name province}}</h2>
         <div class="city-links">
             {{#each-in byCities as |city restaurants|}}
