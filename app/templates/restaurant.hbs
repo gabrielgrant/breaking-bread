@@ -15,9 +15,11 @@
     {{#if model.[Instagram Handle]}}
         <a href="https://instagram.com/{{model.[Instagram Handle]}}">@{{model.[Instagram Handle]}}</a>
     {{/if}}
-    <p>
-        {{model.[3rd Party Delivery Services]}}
-    </p>
+    {{#if model.[3rd Party Delivery Services]}}
+        <p>
+            Delivery available on: {{model.[3rd Party Delivery Services]}}
+        </p>
+    {{/if}}
     <p>
         {{model.[Additional offers or promotions]}}
     </p>
