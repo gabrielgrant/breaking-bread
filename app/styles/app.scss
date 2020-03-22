@@ -101,10 +101,6 @@ main section {
     a {
         display: block;
     }
-    .services {
-        color: $highlight-color;
-        text-transform: uppercase;
-    }
     a.details {
         border: 2px solid black;
         display: inline-block;
@@ -124,6 +120,15 @@ main section {
 .restaurant {
     a {
         display: block;
+    }
+}
+
+
+.services {
+    color: $highlight-color;
+    text-transform: uppercase;
+    li {
+        display: inline-block;
     }
 }
 
