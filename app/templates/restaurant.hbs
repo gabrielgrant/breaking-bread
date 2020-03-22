@@ -5,7 +5,7 @@
             <li>{{service}}</li>
         {{/each}}
     </ul>
-    <a href="https://www.google.com/maps?q={{model.[Restaurant Address]}}, {{model.City}}, {{model.Province}}, Canada">{{model.[Restaurant Address]}}, {{model.City}}</a>
+    <a href="https://www.google.com/maps?q={{model.[Restaurant Address]}}, {{model.City}}, {{model.Province}}, Canada" class="address">{{model.[Restaurant Address]}}, {{model.City}}</a>
     {{#if model.[Restaurant phone]}}
         <a href="tel:{{model.[Restaurant phone]}}">{{model.[Restaurant phone]}}</a>
     {{/if}}

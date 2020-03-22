@@ -29,7 +29,7 @@
                                 <li>{{service}}</li>
                             {{/each}}
                         </ul>
-                        <a href="https://www.google.com/maps?q={{r.[Restaurant Address]}}, {{r.City}}, {{r.Province}}, Canada">{{r.[Restaurant Address]}}, {{r.City}}</a>
+                        <a href="https://www.google.com/maps?q={{r.[Restaurant Address]}}, {{r.City}}, {{r.Province}}, Canada" class="address">{{r.[Restaurant Address]}}, {{r.City}}</a>
                         {{#if r.[Restaurant phone]}}
                             <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>
                         {{/if}}

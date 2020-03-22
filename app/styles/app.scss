@@ -139,6 +139,10 @@ main section {
     }
 }
 
+.address {
+    text-transform: capitalize;
+}
+
 .services {
     color: $highlight-color;
     text-transform: uppercase;
