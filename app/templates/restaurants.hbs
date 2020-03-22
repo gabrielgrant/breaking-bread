@@ -3,37 +3,47 @@
 </section>
 <section class="province-links">
     {{#each-in @model as |province restaurants|}}
-        <h3>
+        <h2>
             <a href="#{{province}}">{{province-code-to-name province}}</a>
-        </h3>
+        </h2>
     {{/each-in}}
 </section>
 <section>
-    {{#each-in @model as |province restaurants|}}
-        <h3 id="{{province}}">{{province-code-to-name province}}</h3>
-        <div class='restaurant-cards'>
-            {{#each restaurants as |r|}}
-                <div class="restaurant-card">
-                    <h4><LinkTo @route="restaurant" @model={{r}}>{{r.[Restaurant Name]}}</LinkTo></h4>
-                    <ul class="services">
-                        {{#each r.[Services Offered] as |service|}}
-                            <li>{{service}}</li>
-                        {{/each}}
-                    </ul>
-                    <a href="https://www.google.com/maps?q={{r.[Restaurant Address]}}, {{r.City}}, {{r.Province}}, Canada">{{r.[Restaurant Address]}}, {{r.City}}</a>
-                    {{#if r.[Restaurant phone]}}
-                        <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>
-                    {{/if}}
-                    {{#if r.Website}}
-                        <a href="{{r.Website}}">{{hostname r.Website}}</a>
-                    {{/if}}
-                    {{#if r.[Instagram Handle]}}
-                        <a href="https://instagram.com/{{r.[Instagram Handle]}}">@{{r.[Instagram Handle]}}</a>
-                    {{/if}}
-                    <LinkTo @route="restaurant" @model={{r}} class="details">Details</LinkTo>
-                </div>
-            {{/each}}
+    {{#each-in @model as |province byCities|}}
+        <h2 id="{{province}}">{{province-code-to-name province}}</h2>
+        <div class="city-links">
+            {{#each-in byCities as |city restaurants|}}
+                <h3>
+                    <a href="#{{province}}-{{city}}">{{city}}</a>
+                </h3>
+            {{/each-in}}
         </div>
+        {{#each-in byCities as |city restaurants|}}
+            <h3 id="{{province}}-{{city}}">{{city}}</h3>
+            <div class='restaurant-cards'>
+                {{#each restaurants as |r|}}
+                    <div class="restaurant-card">
+                        <h4><LinkTo @route="restaurant" @model={{r}}>{{r.[Restaurant Name]}}</LinkTo></h4>
+                        <ul class="services">
+                            {{#each r.[Services Offered] as |service|}}
+                                <li>{{service}}</li>
+                            {{/each}}
+                        </ul>
+                        <a href="https://www.google.com/maps?q={{r.[Restaurant Address]}}, {{r.City}}, {{r.Province}}, Canada">{{r.[Restaurant Address]}}, {{r.City}}</a>
+                        {{#if r.[Restaurant phone]}}
+                            <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>
+                        {{/if}}
+                        {{#if r.Website}}
+                            <a href="{{r.Website}}">{{hostname r.Website}}</a>
+                        {{/if}}
+                        {{#if r.[Instagram Handle]}}
+                            <a href="https://instagram.com/{{r.[Instagram Handle]}}">@{{r.[Instagram Handle]}}</a>
+                        {{/if}}
+                        <LinkTo @route="restaurant" @model={{r}} class="details">Details</LinkTo>
+                    </div>
+                {{/each}}
+            </div>
+        {{/each-in}}
     {{/each-in}}
 </section>
 {{outlet}}
