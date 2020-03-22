@@ -121,6 +121,10 @@ main section {
     a {
         display: block;
     }
+    iframe {
+        width: 100%;
+        height: 50vh;
+    }
 }
 
 .services {
@@ -139,11 +143,13 @@ main section {
     }
 }
 
-iframe.wrapped-page  {
-    width: 100%;
-    height: 100vh;
+iframe {
     border: none;
-    position: absolute;
-    top: 0;
-    z-index: -1;
+    &.wrapped-page  {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
 }
