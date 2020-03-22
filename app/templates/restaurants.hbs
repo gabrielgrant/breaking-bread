@@ -15,9 +15,11 @@
             {{#each restaurants as |r|}}
                 <div class="restaurant-card">
                     <h4><LinkTo @route="restaurant" @model={{r}}>{{r.[Restaurant Name]}}</LinkTo></h4>
-                    <p class="services">
-                        {{r.[Services Offered]}}
-                    </p>
+                    <ul class="services">
+                        {{#each r.[Services Offered] as |service|}}
+                            <li>{{service}}</li>
+                        {{/each}}
+                    </ul>
                     <a href="https://www.google.com/maps?q={{r.[Restaurant Address]}}, {{r.City}}, {{r.Province}}, Canada">{{r.[Restaurant Address]}}, {{r.City}}</a>
                     {{#if r.[Restaurant phone]}}
                         <a href="tel:{{r.[Restaurant phone]}}">{{r.[Restaurant phone]}}</a>

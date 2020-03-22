@@ -14,7 +14,10 @@ export default class ApplicationRoute extends Route {
                 error: reject
             });
         });
-        result.data.forEach(e => e['Instagram Handle'] = trim(e['Instagram Handle'], '@'));
+        result.data.forEach(e => {
+            e['Instagram Handle'] = trim(e['Instagram Handle'], '@');
+            e['Services Offered'] = e['Services Offered'].split(', ');
+        });
         return result.data.filterBy('Approved', 'TRUE');
     }
 }

@@ -1,5 +1,10 @@
 <section class="restaurant">
     <h1>{{model.[Restaurant Name]}}</h1>
+    <ul class="services">
+        {{#each model.[Services Offered] as |service|}}
+            <li>{{service}}</li>
+        {{/each}}
+    </ul>
     <a href="https://www.google.com/maps?q={{model.[Restaurant Address]}}, {{model.City}}, {{model.Province}}, Canada">{{model.[Restaurant Address]}}, {{model.City}}</a>
     {{#if model.[Restaurant phone]}}
         <a href="tel:{{model.[Restaurant phone]}}">{{model.[Restaurant phone]}}</a>
@@ -10,9 +15,6 @@
     {{#if model.[Instagram Handle]}}
         <a href="https://instagram.com/{{model.[Instagram Handle]}}">@{{model.[Instagram Handle]}}</a>
     {{/if}}
-     <p>
-         {{model.[Services Offered]}}
-     </p>
     <p>
         {{model.[3rd Party Delivery Services]}}
     </p>
