@@ -16,7 +16,9 @@ export default class ApplicationRoute extends Route {
         });
         result.data.forEach(e => {
             e['Instagram Handle'] = trim(e['Instagram Handle'], '@');
-            e['Services Offered'] = e['Services Offered'].split(', ');
+            e['Services Offered'] = e['Services Offered'].split(', ').map(service => service.split(' (')[0]);  // remove service suffixes
+            e['Services Offered'] = new Set(e['Services Offered']);  // unique-ify
+            e['Services Offered'].delete('Dine-In');
         });
         return result.data.filterBy('Approved', 'TRUE');
     }
