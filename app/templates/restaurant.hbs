@@ -21,6 +21,9 @@
     <p>
         {{model.[Additional offers or promotions]}}
     </p>
+    {{#if model.[Gift card link]}}
+        <a href="{{model.[Gift card link]}}">Buy a Gift Card</a>
+    {{/if}}
     <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD3lpjulRAtriiLnt5I08h4Bdf9VlYv6tg&q={{model.[Restaurant Address]}}, {{model.City}}, {{model.Province}}, Canada"></iframe>
     {{outlet}}
 </section>
