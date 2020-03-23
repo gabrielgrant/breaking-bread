@@ -1,5 +1,5 @@
 <section class="hero">
-    <h1>Participating Restaurants</h1>
+    <h1>Participating Restaurants {{#if this.province}}in {{province-code-to-name this.province}}{{/if}}</h1>
 </section>
 <section class="province-links">
     {{#each-in this.sortedRestaurants as |province restaurants|}}
