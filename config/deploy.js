@@ -15,6 +15,13 @@ module.exports = function(deployTarget) {
   if (deployTarget === 'staging') {
     ENV.build.environment = 'production';
     // configure other plugins for staging deploy target here
+    ENV['scp'] = {
+      nodes: [{
+        username: 'gabeshou',
+        host: 'briel.ca',
+        path: '/home/gabeshou/bb.gabrielgrant.ca/',
+      }],
+    }
   }
 
   if (deployTarget === 'production') {
@@ -22,9 +29,9 @@ module.exports = function(deployTarget) {
     // configure other plugins for production deploy target here
     ENV['scp'] = {
       nodes: [{
-        username: 'gabeshou',
-        host: 'briel.ca',
-        path: '/home/gabeshou/bb.gabrielgrant.ca/',
+        username: 'bbread',
+        host: 'breakingbreadnow.com',
+        path: '/home/bbread/breakingbreadnow.com/', //ciJwXYdS
       }],
     }
   }
