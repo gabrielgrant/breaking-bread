@@ -15,6 +15,6 @@ export default class RestaurantsController extends Controller {
     get sortedRestaurants() {
         let byProvince = groupBy(this.filteredRestaurants, 'Province');
         let byCityEntries = Object.entries(byProvince).map(([k, v]) => [k, groupBy(v, 'City')]);
-        return Object.fromEntries(byCityEntries);
+        return new Map(byCityEntries);
     }
 }

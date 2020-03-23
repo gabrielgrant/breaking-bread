@@ -12,11 +12,13 @@
     {{#each-in this.sortedRestaurants as |province byCities|}}
         <h2 id="{{province}}">{{province-code-to-name province}}</h2>
         <div class="city-links">
-            {{#each-in byCities as |city restaurants|}}
-                <h3>
-                    <a href="#{{province}}-{{city}}">{{city}}</a>
-                </h3>
-            {{/each-in}}
+            {{#if (gt byCities.size 1)}}{{byCities.size}}
+                {{#each-in byCities as |city restaurants|}}
+                    <h3>
+                        <a href="#{{province}}-{{city}}">{{city}}</a>
+                    </h3>
+                {{/each-in}}
+            {{/if}}
         </div>
         {{#each-in byCities as |city restaurants|}}
             <h3 id="{{province}}-{{city}}">{{city}}</h3>
