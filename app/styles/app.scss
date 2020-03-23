@@ -6,11 +6,27 @@ $highlight-color: #4ed1be;
 
 $side-padding: 4vw;
 
+html {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: none;
+}
+
+main {
+    flex: 1;
+}
+
 a, a:hover, a:visited, a:active {
     color: $link-color;
 }
 
 header {
+    flex-shrink: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -176,9 +192,6 @@ iframe {
     border: none;
     &.wrapped-page  {
         width: 100%;
-        height: 100vh;
-        position: absolute;
-        top: 0;
-        z-index: -1;
+        height: 100%;
     }
 }
