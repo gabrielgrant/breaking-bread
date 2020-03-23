@@ -14,4 +14,12 @@ module('Integration | Helper | hostname', function(hooks) {
     assert.equal(this.element.textContent.trim(), 'me.com');
   });
 
+  test('it works with missing protocol', async function(assert) {
+    this.set('inputValue', 'me.com:32/path?this=that');
+
+    await render(hbs`{{hostname inputValue}}`);
+
+    assert.equal(this.element.textContent.trim(), 'me.com');
+  });
+
 });
