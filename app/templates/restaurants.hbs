@@ -4,7 +4,7 @@
 <section class="province-links">
     {{#each-in this.sortedRestaurants as |province restaurants|}}
         <h2>
-            <a href="#{{province}}">{{province-code-to-name province}}</a>
+            <LinkTo @query={{hash province=province}}>{{province-code-to-name province}}</LinkTo>
         </h2>
     {{/each-in}}
 </section>
