@@ -3,14 +3,18 @@ import groupBy from 'lodash/groupBy'
 import { tracked } from '@glimmer/tracking';
 
 export default class RestaurantsController extends Controller {
-    queryParams = ['province'];
+    queryParams = ['province', 'service'];
     @tracked province = null;
+    @tracked service = null;
     get filteredRestaurants() {
+        let filteredModel = this.model;
         if (this.province) {
-            return this.model.filter(r => r.Province === this.province);
-        } else {
-            return this.model;
+            filteredModel = filteredModel.filter(r => r.Province === this.province);
         }
+        if (this.service) {
+            filteredModel = filteredModel.filter(r => (r['Services Offered'] || []).has(this.service));
+        }
+        return filteredModel;
     }
     get sortedRestaurants() {
         let byProvince = groupBy(this.filteredRestaurants, 'Province');
