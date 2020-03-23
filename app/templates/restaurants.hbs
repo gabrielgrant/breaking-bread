@@ -9,6 +9,9 @@
     {{/each-in}}
 </section>
 <section>
+    {{#each this.services as |service|}}
+        {{service}}
+    {{/each}}
     {{#each-in this.sortedRestaurants as |province byCities|}}
         <h2 id="{{province}}">{{province-code-to-name province}}</h2>
         <div class="city-links">

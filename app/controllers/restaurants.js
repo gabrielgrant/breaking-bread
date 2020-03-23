@@ -17,4 +17,7 @@ export default class RestaurantsController extends Controller {
         let byCityEntries = Object.entries(byProvince).map(([k, v]) => [k, groupBy(v, 'City')]);
         return new Map(byCityEntries);
     }
+    get services() {
+        return  this.model.reduce(((services, r) => new Set([...services, ...r['Services Offered']])), []);
+    }
 }
