@@ -13,6 +13,8 @@
         <LinkTo @query={{hash service=service}} class="service">{{service}}</LinkTo>
     {{/each}}
     <LinkTo @query={{hash service=null}} class="service">All Services</LinkTo>
+</section>
+<section>
     {{#each-in this.sortedRestaurants as |province byCities|}}
         <h2 id="{{province}}">{{province-code-to-name province}}</h2>
         <div class="city-links">
