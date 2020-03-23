@@ -122,9 +122,13 @@ a.service {
     color: white;
     text-decoration: none;
     padding: 0.2em 1em;
+    border: 2px solid transparent;
     &:hover {
         text-decoration: none;
         background-color: $primary-background;
+    }
+    &.active {
+        border: 2px solid $link-color;
     }
 }
 .restaurant-cards {
