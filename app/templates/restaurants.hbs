@@ -10,7 +10,7 @@
 </section>
 <section>
     {{#each this.services as |service|}}
-        {{service}}
+        <LinkTo @query={{hash service=service}}>{{service}}</LinkTo>
     {{/each}}
     {{#each-in this.sortedRestaurants as |province byCities|}}
         <h2 id="{{province}}">{{province-code-to-name province}}</h2>
