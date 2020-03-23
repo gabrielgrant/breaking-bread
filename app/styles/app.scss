@@ -98,6 +98,19 @@ main section {
     }
 }
 
+a.service {
+    display: inline-block;
+    margin: 0.3em;
+    background: $highlight-color;
+    border-radius: 1em;
+    color: white;
+    text-decoration: none;
+    padding: 0.2em 1em;
+    &:hover {
+        text-decoration: none;
+        background-color: $primary-background;
+    }
+}
 .restaurant-cards {
     display: grid;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
