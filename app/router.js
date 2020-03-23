@@ -12,4 +12,5 @@ Router.map(function() {
   this.route('signup');
   this.route('restaurant', {path: 'restaurants/:restaurant_id'});
   this.route('update');
+  this.route('404');
 });
