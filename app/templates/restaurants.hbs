@@ -1,13 +1,15 @@
 <section class="hero">
     <h1>Participating Restaurants {{#if this.province}}in {{province-code-to-name this.province}}{{/if}}</h1>
 </section>
-<section class="province-links">
-    {{#each-in this.sortedRestaurants as |province restaurants|}}
-        <h2>
-            <LinkTo @query={{hash province=province}}>{{province-code-to-name province}}</LinkTo>
-        </h2>
-    {{/each-in}}
-</section>
+{{#if (gt this.sortedRestaurants.size 1)}}
+    <section class="province-links">
+        {{#each-in this.sortedRestaurants as |province restaurants|}}
+            <h2>
+                <LinkTo @query={{hash province=province}}>{{province-code-to-name province}}</LinkTo>
+            </h2>
+        {{/each-in}}
+    </section>
+{{/if}}
 <section>
     {{#each this.services as |service|}}
         <LinkTo @query={{hash service=service}} class="service">{{service}}</LinkTo>
