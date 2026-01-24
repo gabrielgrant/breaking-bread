@@ -65,7 +65,7 @@
     "edition": "octane"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.23",
     "papaparse": "^5.1.1"
   }
 }
